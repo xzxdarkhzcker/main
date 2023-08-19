@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Address</title>
+    <script>
+        // Function to retrieve IP address
+        function getIPAddress() {
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    const ipAddress = data.ip;
+                    document.getElementById('ip-address').textContent = ipAddress;
+                })
+                .catch(error => {
+                    console.error('Error fetching IP address:', error);
+                });
+        }
+    </script>
+</head>
+<body onload="getIPAddress()">
+    <h1>STS-SECURITY // Your IP Address:</h1>
+    <p id="ip-address">Loading...</p>
+</body>
+</html>
+
+
+<h1>YOUR IP HAS BEEN SAVED BY S.T.S-SECURITY</h1>
+
